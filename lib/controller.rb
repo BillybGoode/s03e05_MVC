@@ -20,10 +20,8 @@ class Controller
   def destroy_gossip(index)
     table = CSV.read('./db/gossip.csv')
     table.delete_at(index.to_i)
-    binding.pry
     CSV.open('./db/gossip.csv', 'w') do |csv|
       table.each {|row| csv << row}
     end
-    binding.pry
   end
 end
