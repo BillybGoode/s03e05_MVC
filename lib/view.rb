@@ -14,4 +14,10 @@ class View
     return params = {"content"=>gossip, "author"=>name}
     print "\n\n"
   end
+
+  def index_gossips
+    Gossip.all.each.with_index do |gossip, index|
+      puts "gossip n° #{index} par #{gossip.author} dit '#{gossip.content}'"
+    end
+  end
 end
